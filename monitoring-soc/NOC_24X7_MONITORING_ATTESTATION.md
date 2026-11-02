@@ -4,7 +4,7 @@
 **Attestation Date:** 2 November 2026  
 **Attesting Authority:** Office of the Founder & CEO, Pingplus Media  
 **Classification:** SANITIZED OWNER ATTESTATION & OPERATIONAL REGISTER  
-**Result Status:** **OWNER ATTESTED / NOC EVIDENCED (GENUINE THIRD-PARTY SOC GAP)**  
+**Result Status:** **OWNER-ATTESTED IN-HOUSE 24X7 SECURITY MONITORING; STAFFING RECEIPTS PENDING**  
 
 ---
 
@@ -30,5 +30,5 @@ The system owner officially confirms the following operational staffing and infr
 ## 3. Scope Distinction: NOC Monitoring vs. Dedicated Third-Party SOC
 In adherence to strict TPRM transparency rules:
 - **In-House NOC / DevOps (Evidenced):** 24x7 continuous platform and alert monitoring is fully operational.
-- **Dedicated External SOC / MDR (Genuine Gap):** Pingplus Media does not currently contract an external third-party Security Operations Center (e.g. MDR vendor with an external 24x7 SLA). 
-- **Verdict:** Classified truthfully as **OWNER-ATTESTED IN-HOUSE NOC (WITH THIRD-PARTY SOC CONTRACT DEPENDENCY)**.
+- **External SOC vendor:** No outside MDR agreement is reported, but ValueFirst explicitly permits an in-house or outsourced 24x7 SOC. Absence of an external supplier is not a control failure by itself.
+- **Verdict:** Owner-attested in-house 24x7 security monitoring. Attach duty roster, after-hours SIEM alert handling and analyst signoff to verify actual staffing.

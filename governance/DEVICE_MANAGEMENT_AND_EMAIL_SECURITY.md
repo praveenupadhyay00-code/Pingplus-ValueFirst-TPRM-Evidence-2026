@@ -5,7 +5,7 @@
 **Target Domain:** `pingplusmedia.com`  
 **Assessor:** Pingplus Media Authorized Security & Compliance Operator  
 **Classification:** SANITIZED TECHNICAL EVIDENCE  
-**Result Status:** **CONTROL 47 (PASS) / CONTROLS 48, 50 (PARTIAL) / CONTROL 49 (GENUINE GAP)**  
+**Result Status:** **CONTROLS 47–50: SCOPE-LIMITED TECHNICAL EVIDENCE; FLEET/ENFORCEMENT PROOF OPEN**  
 
 ---
 
@@ -25,17 +25,17 @@ Executed command: `dig +short TXT _dmarc.pingplusmedia.com`
 ```text
 "v=DMARC1; p=none;"
 ```
-- **DMARC Verification:** Configured with valid DMARC policy record (`v=DMARC1; p=none;`), establishing domain monitoring and reporting.
+- **DMARC Verification:** Configured with valid DMARC policy record (`v=DMARC1; p=none;`), establishing monitoring-only DMARC. With p=none, it does not request receiver quarantine/rejection. This TXT lookup alone also does not verify DKIM signature/alignment.
 
 ---
 
 ## 2. Corporate Mailbox Security & MFA (Control 48)
 - Corporate mailboxes for `@pingplusmedia.com` are managed under enterprise Google Workspace.
-- Google 2-Step Verification (2SV) is enabled and enforced across all administrative accounts to protect against credential stuffing and phishing attacks.
+- Google 2-Step Verification (2SV) policy is reported enabled. Full administrative and employee account enforcement must be confirmed from Google Admin console; enabled alone does not prove mandatory 2SV for every account.
 - Outbound and inbound email traffic is filtered by Google's native anti-spam, anti-phishing, and malware attachment inspection engines.
 
 ---
 
 ## 3. Endpoint Management & Remote Wipe Controls (Controls 49, 50)
-- **Remote Account Revocation (Control 50 - Partial):** Google Workspace mobile device management allows immediate remote account wipe, session termination, and corporate data removal from lost or offboarded user devices.
-- **Enterprise MDM Solution (Control 49 - Genuine Gap):** A centralized commercial Mobile Device Management software agent (such as Jamf Pro or Microsoft Intune) is not currently deployed across workforce hardware endpoints. This is transparently acknowledged as a genuine operational dependency.
+- **Remote Account Revocation (Control 50 - Partial):** Workspace can revoke sessions and remove corporate account information. Account wipe is not equivalent to a whole-device lock/wipe; verify the actual available device-level command in the organization's Google Workspace edition.
+- **MDM Scope (Control 49 - Partial):** Google Workspace device management is available and reports remote account actions. Lack of Jamf Pro or Microsoft Intune alone does not prove absence of MDM. Verify actual managed device enrollment, scope, compliance status and policies, including offboarded/lost-device handling.

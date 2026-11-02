@@ -1,3 +1,6 @@
+# Historical checksum manifest ONLY — SHA256 values refer to initial public commit 436bd2e2996a80d4de4d982d36cc525cc1a9ca18
+# DO NOT use these checksums to validate current HEAD after document redaction/reconciliation.
+# Regenerate and sign a new manifest after the clean-history final evidence release.
 97a30d681bf98406ea89d1c6ebc997beb0a8ff51267c71615a21a86433d4673b  ./README.md
 7c000c577921e2c2fcee32ab463677af3f2fd66d71689bc801606f7d107a1f48  ./backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md
 ec823ea3abf84dd131b52b9601ba34632e116fbb6267bc6188d130aceaba5e2d  ./backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md
