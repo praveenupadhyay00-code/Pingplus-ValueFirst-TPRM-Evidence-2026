@@ -70,12 +70,15 @@ The repository is structured into modular compliance domains:
 
 ---
 
-## 3. High-Level Control Status Summary
+## 3. High-Level Control Status Summary (reconciled 2 November)
 
-Across the 50 evaluated controls:
-- **`E` (Evidenced in Tested Scope):** **19 Controls** (Controls 1, 3, 4, 8, 10, 11, 12, 14, 16, 18, 19, 20, 24, 26, 29, 31, 38, 41, 47)
-- **`P` (Partial / Exception):** **23 Controls** (Controls 2, 6, 7, 9, 15, 17, 21, 22, 23, 25, 30, 33, 35, 36, 37, 39, 40, 42, 43, 45, 46, 48, 50)
-- **`G` (Genuine Gap):** **8 Controls** (Controls 5, 13, 27, 28, 32, 44, 49, plus external independent VAPT certification)
+- **E — scoped evidence:** 21 controls
+- **P — owner-attested, scoped proof pending, or operational exception:** 26 controls
+- **G — confirmed control/contract gap:** 3 controls
+
+The initial operator narrative stated 19 E / 23 P / 8 G but its own 50-row matrix stated 21 E / 22 P / 7 G. This tally is calculated from the revised 50-row index. It is internal evidence classification, not ValueFirst acceptance.
+
+An in-house 24x7 SOC is expressly permitted by the question; an external vendor contract is not mandatory. Google Workspace device management is a possible MDM implementation; lack of Jamf/Intune alone does not prove absence. DMARC p=none is monitor-only and DKIM remains to be validated.
 
 ---
 
