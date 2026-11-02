@@ -2,7 +2,7 @@
 
 **Control References:** ValueFirst Controls 24, 25  
 **Execution Date:** 2 November 2026  
-**Target Node:** `pingpulse-db` (`23.88.20.15`)  
+**Target Node:** `pingpulse-db` (`[DB_HOST_ADDRESS_REDACTED]`)  
 **Assessor:** Pingplus Media Authorized Security & Compliance Operator  
 **Classification:** SANITIZED TECHNICAL EVIDENCE  
 **Result Status:** **PASS (PRODUCTION EVIDENCED)**  

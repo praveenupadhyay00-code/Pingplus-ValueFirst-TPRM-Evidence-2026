@@ -85,12 +85,12 @@ Legacy TLS 1.0, TLS 1.1, and SSLv3 handshakes are completely rejected at the Ngi
 |---|:---:|:---:|---|---|:---:|
 | **Web Portal Edge** (`portal.pingplusmedia.com`) | 443 | HTTPS | TLSv1.2, TLSv1.3 (AEAD) | Public internet via Nginx reverse proxy | **ENFORCED (PASS)** |
 | **Keycloak IAM Edge** (`auth.pingplusmedia.com`) | 443 | HTTPS | TLSv1.2, TLSv1.3 (AEAD) | Public internet via Nginx reverse proxy | **ENFORCED (PASS)** |
-| **Downstream Customer Inbound** | 2775 | Plaintext SMPP v3.4 | TCP | Gated to 3 approved customer IPs (`180.179.215.163`, `180.179.215.111`, `180.179.210.40`) | **EXCEPTION PRESERVED** |
+| **Downstream Customer Inbound** | 2775 | Plaintext SMPP v3.4 | TCP | Gated to 3 approved customer IPs (`[PARTNER_ADDRESS_A_REDACTED]`, `[PARTNER_ADDRESS_B_REDACTED]`, `[PARTNER_ADDRESS_C_REDACTED]`) | **EXCEPTION PRESERVED** |
 | **SMPP TLS Inbound (QA / Capable Clients)** | 2778 | SMPP over TLS | TLSv1.3 (AEAD) | Gated to verified TLS client certificates | **QA TESTED (PASS)** |
 | **Upstream Carrier: Vodafone** (10 Binds) | 2777 | SMPP v3.4 | TCP | Outbound to private carrier gateway | **OPERATIONAL EXCEPTION** |
 | **Upstream Carrier: Airtel** (2 Binds) | 2778 | SMPP v3.4 | TCP | Outbound to private carrier gateway | **OPERATIONAL EXCEPTION** |
 | **Upstream Partner: Mobishastra** (2 Binds) | 18849 | SMPP v3.4 | TCP | Outbound to designated host port | **OPERATIONAL EXCEPTION** |
-| **Internal Node DB (PostgreSQL / pgBouncer)** | 5432, 6432 | PostgreSQL Protocol | SCRAM-SHA-256 | Private Hetzner vSwitch VLAN (`10.10.10.20` only) | **RESTRICTED (PASS)** |
+| **Internal Node DB (PostgreSQL / pgBouncer)** | 5432, 6432 | PostgreSQL Protocol | SCRAM-SHA-256 | Private Hetzner vSwitch VLAN (`[PRIVATE_NETWORK_ADDRESS_REDACTED]` only) | **RESTRICTED (PASS)** |
 
 ---
 

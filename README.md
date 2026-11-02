@@ -4,7 +4,7 @@
 **Execution & Packaging Date:** 2 November 2026  
 **Auditor / Client:** ValueFirst Digital Media Pvt. Ltd. / Tanla Platforms Ltd.  
 **System Evaluated:** Ping Pulse Messaging Platform  
-**Target Hosts:** `pingpulse-app` (`23.88.74.110`) & `pingpulse-db` (`23.88.20.15`)  
+**Target Hosts:** `pingpulse-app` (`[APP_HOST_ADDRESS_REDACTED]`) & `pingpulse-db` (`[DB_HOST_ADDRESS_REDACTED]`)  
 **Certification Standard:** ISO/IEC 27001:2022 (Certificate `305026090945IS`, QRO Certification LLP)  
 **Classification:** SANITIZED PUBLIC COMPLIANCE EVIDENCE  
 

@@ -2,7 +2,7 @@
 
 **Control References:** ValueFirst Controls 17, 26, 34  
 **Execution Date:** 2 November 2026  
-**Target Nodes:** `pingpulse-app` (`23.88.74.110`) & `pingpulse-db` (`23.88.20.15`)  
+**Target Nodes:** `pingpulse-app` (`[APP_HOST_ADDRESS_REDACTED]`) & `pingpulse-db` (`[DB_HOST_ADDRESS_REDACTED]`)  
 **Assessor:** Pingplus Media Authorized Security & Compliance Operator  
 **Classification:** SANITIZED TECHNICAL EVIDENCE  
 **Result Status:** **PASS (PRODUCTION EVIDENCED)**  
