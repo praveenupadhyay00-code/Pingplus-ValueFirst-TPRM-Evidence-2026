@@ -73,6 +73,8 @@ stanza: pingpulse
 2. **Continuous WAL Streaming:**
    - WAL archiving is active (`archive_mode: on`).
    - Archived range spans continuously from base WAL `000000010000000000000023` to current WAL `000000010000034D0000006F`.
-3. **Documented Operational Exception (`repo1`):**
+3. **Documented Operational Exception (`repo1` & Primary Storage):**
    - Local on-disk repository `repo1` cipher is configured as `none`. This is preserved as an operational exception to optimize local I/O throughput during rapid crash recovery.
-   - The remote offsite archive (`repo2`) strictly enforces `aes-256-cbc` encryption for all data at rest.
+   - Primary database NVMe SoftRAID `/dev/md2` is unencrypted at the block/LUKS level, with sensitive message content protected via mandatory SHA-256 digests and PII masking at the application layer.
+   - The remote offsite archive (`repo2`) strictly enforces `aes-256-cbc` encryption for all data and WAL segments at rest (see full assessment in [`backup-and-dr/LIVE_MESSAGE_ARCHIVE_ENCRYPTION_ASSESSMENT.md`](LIVE_MESSAGE_ARCHIVE_ENCRYPTION_ASSESSMENT.md)).
+

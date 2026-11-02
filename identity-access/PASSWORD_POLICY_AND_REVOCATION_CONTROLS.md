@@ -24,7 +24,8 @@
 
 ### B. Elimination of Default Credentials (Control 10)
 - **Operating System Accounts:** Standard default Linux accounts (`guest`, `test`, `ubuntu`, `admin`) are removed or disabled with `/sbin/nologin`. Direct root SSH login is blocked (`PermitRootLogin no`).
-- **PostgreSQL Database:** Accepts connections exclusively over the private virtual switch (`10.10.10.20`), requiring scram-sha-256 password authentication. Peer authentication is enforced for local system accounts.
+- **PostgreSQL Database:** Accepts connections exclusively over the private virtual switch (`[PRIVATE_VLAN_VIRTUAL_SWITCH]`), requiring scram-sha-256 password authentication. Peer authentication is enforced for local system accounts.
+
 - **Keycloak IAM:** The master realm administrative account (`kcadmin`) uses a unique generated 32-character credential stored in `/opt/keycloak/conf/.admin_password` (mode `0600`).
 - **Internal Messaging (Redis/NATS):** Bound strictly to localhost loopback interfaces (`127.0.0.1` and `[::1]`) with authenticated credentials.
 

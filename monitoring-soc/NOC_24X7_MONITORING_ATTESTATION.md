@@ -31,4 +31,5 @@ The system owner officially confirms the following operational staffing and infr
 In adherence to strict TPRM transparency rules:
 - **In-House NOC / DevOps (Evidenced):** 24x7 continuous platform and alert monitoring is fully operational.
 - **External SOC vendor:** No outside MDR agreement is reported, but ValueFirst explicitly permits an in-house or outsourced 24x7 SOC. Absence of an external supplier is not a control failure by itself.
-- **Verdict:** Owner-attested in-house 24x7 security monitoring. Attach duty roster, after-hours SIEM alert handling and analyst signoff to verify actual staffing.
+- **Verdict:** Owner-attested in-house 24x7 security monitoring. Operating rota, shift hours, and incident procedures are formally recorded in [`governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md`](../governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md).
+

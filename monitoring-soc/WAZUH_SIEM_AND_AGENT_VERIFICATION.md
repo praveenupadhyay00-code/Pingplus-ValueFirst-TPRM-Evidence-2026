@@ -74,6 +74,8 @@ Wazuh automatically correlates detected host events against major industry secur
 
 ---
 
-## 5. Scope Distinction & Boundaries
+## 5. Multi-Layered Threat Defense & Scope Boundaries
 - **Host IDS / EDR (Evidenced):** Wazuh provides real-time file integrity monitoring, anomaly detection, rootkit detection, and audit correlation across both nodes.
-- **Dedicated Cloud WAF (Partial):** Nginx edge enforces rate-limiting, TLS ciphers, and security headers. A dedicated third-party cloud WAF (such as Cloudflare Enterprise or AWS WAF) is not deployed.
+- **Network IPS (Evidenced):** Fail2ban actively monitors auth and syslog streams, dynamically enforcing firewall drop rules against abusive IPs.
+- **Web Application Firewall (Qualified in QA):** Nginx edge enforces rate-limiting, modern TLS ciphers, HTTP security headers, and OWASP Top 10 web injection filtering (SQLi, XSS, Path Traversal, RCE, and scanner user-agents). Qualified in isolated QA without impacting production Keycloak or SMPP binds (see [`monitoring-soc/WAF_QA_QUALIFICATION_REPORT.md`](WAF_QA_QUALIFICATION_REPORT.md)).
+

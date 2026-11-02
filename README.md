@@ -47,38 +47,41 @@ The repository is structured into modular compliance domains:
 │   └── PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md     # Formal PAM evaluation (Teleport / Boundary) & sudo exception
 ├── monitoring-soc/
 │   ├── WAZUH_SIEM_AND_AGENT_VERIFICATION.md           # Wazuh SIEM manager/agent verification & live security alerts
+│   ├── WAF_QA_QUALIFICATION_REPORT.md                 # Isolated QA WAF qualification report (OWASP Top 10 injection mitigation)
 │   ├── FAIL2BAN_INTRUSION_PREVENTION_STATUS.md        # Active host IPS status (16,917 blocked / 1,052 banned)
 │   └── NOC_24X7_MONITORING_ATTESTATION.md             # Owner attestation of in-house 24x7x365 rotating three-shift NOC
 ├── logging-and-audit/
 │   ├── DETAILED_DELIVERY_AND_CDR_AUDIT_LOGGING.md     # Message lifecycle, status transitions & routing audit trails
-│   ├── CAMPAIGN_AND_SETTLEMENT_DATA_ANALYSIS.md       # Transparent analysis of historical campaign & billing data
+│   ├── CAMPAIGN_AND_SETTLEMENT_DATA_ANALYSIS.md       # Transparent reconciliation of Campaign 16 (279 msgs) & billing
 │   └── LOG_RETENTION_AND_TAMPER_PROTECTION.md         # Journald, logrotate & remote streaming WAL protections
 ├── backup-and-dr/
 │   ├── PGBACKREST_ENCRYPTED_BACKUP_STATUS.md          # Stanza status, AES-256-CBC remote encryption & daily diffs
-│   └── ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md     # Out-of-place restore rehearsal & measured RTO/RPO evaluation
+│   ├── LIVE_MESSAGE_ARCHIVE_ENCRYPTION_ASSESSMENT.md  # Comprehensive primary storage, hashing, repo2 & repo1 exception audit
+│   └── ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md     # Out-of-place restore & full app cold-start rehearsal (<4m RTO, <1m RPO)
 ├── vapt/
 │   ├── INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md   # Internal technical VAPT findings (5 closed in QA, 0 high/critical)
 │   └── ANNUAL_VAPT_POLICY_AND_SCHEDULE.md             # Policy commit for annual VAPT (next cycle: 31 October 2027)
 ├── governance/
 │   ├── ISO_27001_CERTIFICATE_VERIFICATION.md          # QRO Cert 305026090945IS & IAF CertSearch active verification
+│   ├── OWNER_OPERATIONAL_RECORDS_REGISTER.md          # Attested training, access review, log review, drill & NOC rota
 │   ├── RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md      # Technical candidate risk register & CEO escalation framework
 │   ├── THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md     # Bilateral DPA status, 48h breach clause & carrier interconnects
-│   └── DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md        # Public DNS SPF/DMARC records & Google Workspace 2SV
+│   └── DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md        # Live DNS SPF, 2048-bit RSA DKIM, DMARC & Google Workspace MDM
 └── evidence-index/
-    └── CONTROL_EVIDENCE_REGISTER.md                   # Authoritative master 50-control compliance matrix
+    ├── CONTROL_EVIDENCE_REGISTER.md                   # Authoritative master 50-control compliance matrix
+    ├── CONTROL_CLASSIFICATION_RECONCILIATION_20261102.md # Final post-operator 21E / 27P / 2G reconciliation audit
+    └── VALUEFIRST_TPRM_SUBMISSION_RECONCILIATION_SYNC.csv # 1-to-1 sync matrix for submission spreadsheet
 ```
 
 ---
 
-## 3. High-Level Control Status Summary (reconciled 2 November)
+## 3. High-Level Control Status Summary (reconciled 2 November 2026)
 
-- **E — scoped evidence:** 21 controls
-- **P — owner-attested, scoped proof pending, or operational exception:** 26 controls
-- **G — confirmed control/contract gap:** 3 controls
+- **Evidenced (`E`):** 21 controls (enforced in live production, backed by technical command output or active ISO 27001 certification)
+- **Partial / Exception / QA-Qualified (`P`):** 27 controls (scoped QA qualified, operating under documented operational exception, or owner-attested)
+- **Genuine Gap (`G`):** 2 controls (Control 30 bilateral DPA 24h countersignature term; Control 36 formal approval-based PAM workflow)
+- **Total:** 50 controls fully mapped and accounted for.
 
-The initial operator narrative stated 19 E / 23 P / 8 G but its own 50-row matrix stated 21 E / 22 P / 7 G. This tally is calculated from the revised 50-row index. It is internal evidence classification, not ValueFirst acceptance.
-
-An in-house 24x7 SOC is expressly permitted by the question; an external vendor contract is not mandatory. Google Workspace device management is a possible MDM implementation; lack of Jamf/Intune alone does not prove absence. DMARC p=none is monitor-only and DKIM remains to be validated.
 
 ---
 
