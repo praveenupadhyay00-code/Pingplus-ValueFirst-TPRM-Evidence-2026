@@ -1,0 +1,77 @@
+# ValueFirst 50-Control Comprehensive Evidence Register
+
+**Document ID:** `PP-REG-50C-20261102`  
+**Cutoff Date:** 2 November 2026  
+**Governing Standard:** ISO/IEC 27001:2022 Certified ISMS  
+**Assessor:** Pingplus Media Authorized Security & Compliance Operator  
+**Classification:** SANITIZED MASTER EVIDENCE MATRIX  
+
+---
+
+## 1. Classification Methodology
+- **`E` (Evidenced):** Enforced in production, verified by technical command output, or backed by active independent certification.
+- **`P` (Partial / Exception):** Scoped QA tested, partially deployed, or operating under a documented and approved operational exception.
+- **`G` (Genuine Gap):** Genuine unmet requirement, external bilateral signing dependency, or unperformed physical audit.
+
+### Summary Tally:
+- **Evidenced (`E`):** 19 Controls
+- **Partial / Exception (`P`):** 23 Controls
+- **Genuine Gap (`G`):** 8 Controls
+- **Total:** 50 Controls (100% Accounted)
+
+---
+
+## 2. Master 50-Control Evidence Matrix
+
+| # | Control Requirement | State | Supporting Evidence Document | Execution Date | Limitations & Scope Boundary |
+|:---:|---|:---:|---|:---:|---|
+| **1** | Registered entity / business presence in India | **E** | [`policies/CONTROL_POLICY_INDEX.md`](../policies/CONTROL_POLICY_INDEX.md) | 2026-11-02 | GST REG-06 verified; proprietorship trade name. |
+| **2** | Signed Tanla/ValueFirst DPA | **P** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-02 | Signed by Pingplus; awaiting ValueFirst countersignature (specifies 48h SLA). |
+| **3** | Approved ISMS policy | **E** | [`policies/INFORMATION_SECURITY_POLICY_SUMMARY.md`](../policies/INFORMATION_SECURITY_POLICY_SUMMARY.md) | 2026-11-02 | Published, approved, effective 11 April 2026. |
+| **4** | ISO/IEC 27001:2022 Certification | **E** | [`governance/ISO_27001_CERTIFICATE_VERIFICATION.md`](../governance/ISO_27001_CERTIFICATE_VERIFICATION.md) | 2026-11-02 | QRO Cert `305026090945IS`, valid to 8 Sep 2029; IAF Active. |
+| **5** | Employee ISMS awareness training | **G** | [`policies/CONTROL_POLICY_INDEX.md`](../policies/CONTROL_POLICY_INDEX.md) | 2026-11-02 | Policy published; historical dated attendance logs pending generation. |
+| **6** | Security & privacy risk register | **P** | [`governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md`](../governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md) | 2026-11-02 | Candidate technical risk register seeded; executive signoff pending. |
+| **7** | Risk treatment periodic review | **P** | [`governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md`](../governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md) | 2026-11-02 | Quarterly review cycle established in policy; meeting records pending. |
+| **8** | Management escalation of critical risks | **E** | [`governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md`](../governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md) | 2026-11-02 | RACI matrix designates Founder & CEO for critical risk acceptance. |
+| **9** | Password complexity & 90-day change policy | **P** | [`identity-access/PASSWORD_POLICY_AND_REVOCATION_CONTROLS.md`](../identity-access/PASSWORD_POLICY_AND_REVOCATION_CONTROLS.md) | 2026-11-02 | Keycloak enforces complexity & brute-force lockout; global 90d rotation partial. |
+| **10** | Default credentials eliminated | **E** | [`identity-access/PASSWORD_POLICY_AND_REVOCATION_CONTROLS.md`](../identity-access/PASSWORD_POLICY_AND_REVOCATION_CONTROLS.md) | 2026-11-02 | Default OS accounts disabled; scram-sha-256 for DB; random kcadmin secrets. |
+| **11** | SMPP client IP allowlisting | **E** | [`network-security/SMPP_PORT_2775_ALLOWLIST_VERIFICATION.md`](../network-security/SMPP_PORT_2775_ALLOWLIST_VERIFICATION.md) | 2026-11-02 | Port 2775 strictly gated to 3 customer IPs via UFW; app-level bind ACL. |
+| **12** | Multi-Factor Authentication (MFA) for Admins | **E** | [`identity-access/PRODUCTION_ADMIN_MFA_ENFORCEMENT_EVIDENCE.md`](../identity-access/PRODUCTION_ADMIN_MFA_ENFORCEMENT_EVIDENCE.md) | 2026-11-02 | Enforced in production (`PINGPULSE_KEYCLOAK_ADMIN_MODE=enforce`); TOTP required. |
+| **13** | Periodic access rights review | **G** | [`policies/CONTROL_POLICY_INDEX.md`](../policies/CONTROL_POLICY_INDEX.md) | 2026-11-02 | Policy approved; quarterly signed recertification records pending generation. |
+| **14** | Immediate access revocation | **E** | [`identity-access/PASSWORD_POLICY_AND_REVOCATION_CONTROLS.md`](../identity-access/PASSWORD_POLICY_AND_REVOCATION_CONTROLS.md) | 2026-11-02 | JWT middleware immediately rejects inactive users; SSO session termination. |
+| **15** | SMPP transport encryption (TLS/VPN) | **P** | [`network-security/TRANSPORT_SECURITY_AND_TLS_VERIFICATION.md`](../network-security/TRANSPORT_SECURITY_AND_TLS_VERIFICATION.md) | 2026-11-02 | Port 2778 TLS 1.3 verified in QA; port 2775 plaintext exception gated via IP. |
+| **16** | Host-based firewall default-deny | **E** | [`network-security/NETWORK_FIREWALL_BASELINE.md`](../network-security/NETWORK_FIREWALL_BASELINE.md) | 2026-11-02 | UFW active default-deny on APP and DB; private DB VLAN isolation. |
+| **17** | IDS/IPS and WAF protection | **P** | [`monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md`](../monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md) | 2026-11-02 | Wazuh HIDS & Fail2ban active; Nginx rate limiting; dedicated cloud WAF pending. |
+| **18** | Native SMPP TLS/SSL support | **E** | [`network-security/TRANSPORT_SECURITY_AND_TLS_VERIFICATION.md`](../network-security/TRANSPORT_SECURITY_AND_TLS_VERIFICATION.md) | 2026-11-02 | Native SMPP TLS 1.3 listener verified in test suite on port 2778. |
+| **19** | Modern TLS 1.2+ enforced | **E** | [`network-security/TRANSPORT_SECURITY_AND_TLS_VERIFICATION.md`](../network-security/TRANSPORT_SECURITY_AND_TLS_VERIFICATION.md) | 2026-11-02 | TLS 1.2 / 1.3 enforced on web/IAM edges; SSLv3/TLS 1.0/1.1 rejected. |
+| **20** | Plaintext SMPP disabled or restricted | **E** | [`network-security/SMPP_PORT_2775_ALLOWLIST_VERIFICATION.md`](../network-security/SMPP_PORT_2775_ALLOWLIST_VERIFICATION.md) | 2026-11-02 | Port 2775 plaintext strictly restricted to 3 customer IPs; public access denied. |
+| **21** | Sensitive data & OTP masking | **P** | [`policies/DATA_RETENTION_POLICY_SUMMARY.md`](../policies/DATA_RETENTION_POLICY_SUMMARY.md) | 2026-11-02 | Hash storage & PII scrubbing active; full DB TDE on disk pending. |
+| **22** | Encrypted message archives at rest | **P** | [`backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md`](../backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md) | 2026-11-02 | Remote archives on Storage Box encrypted with AES-256-CBC; local disk unencrypted. |
+| **23** | Abnormal traffic & abuse alerts | **P** | [`policies/CONTROL_POLICY_INDEX.md`](../policies/CONTROL_POLICY_INDEX.md) | 2026-11-02 | Eight-level content filtering engine active; real-time SIEM fraud alerting partial. |
+| **24** | Detailed delivery & CDR audit logs | **E** | [`logging-and-audit/DETAILED_DELIVERY_AND_CDR_AUDIT_LOGGING.md`](../logging-and-audit/DETAILED_DELIVERY_AND_CDR_AUDIT_LOGGING.md) | 2026-11-02 | Complete database correlation across logs, DLR receipts, and routing traces. |
+| **25** | Tamper-protected rotated logs | **P** | [`logging-and-audit/LOG_RETENTION_AND_TAMPER_PROTECTION.md`](../logging-and-audit/LOG_RETENTION_AND_TAMPER_PROTECTION.md) | 2026-11-02 | Journald access restricted; logrotate active; continuous remote WAL streaming. |
+| **26** | Automated log anomaly detection | **E** | [`monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md`](../monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md) | 2026-11-02 | Wazuh SIEM actively monitoring logs, FIM, and auth failures across nodes. |
+| **27** | Monthly security log review | **G** | [`monitoring-soc/NOC_24X7_MONITORING_ATTESTATION.md`](../monitoring-soc/NOC_24X7_MONITORING_ATTESTATION.md) | 2026-11-02 | Review procedure defined; last reviewed 9 Oct 2026; monthly signoff pending. |
+| **28** | 24x7 Security Operations Center (SOC) | **G** | [`monitoring-soc/NOC_24X7_MONITORING_ATTESTATION.md`](../monitoring-soc/NOC_24X7_MONITORING_ATTESTATION.md) | 2026-11-02 | In-house 24x7x365 NOC active; external third-party SOC provider is not contracted. |
+| **29** | Documented incident response plan | **E** | [`policies/INCIDENT_RESPONSE_POLICY_SUMMARY.md`](../policies/INCIDENT_RESPONSE_POLICY_SUMMARY.md) | 2026-11-02 | Published policy with reporting channel `security@pingplusmedia.com`. |
+| **30** | Customer breach notification SLA | **P** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-02 | DPA specifies notification without undue delay (48h contractual clause). |
+| **31** | Incident response roles & ownership | **E** | [`policies/INCIDENT_RESPONSE_POLICY_SUMMARY.md`](../policies/INCIDENT_RESPONSE_POLICY_SUMMARY.md) | 2026-11-02 | Incident Commander (Founder & CEO) and response team defined. |
+| **32** | Incident tabletop exercise in 12m | **G** | [`policies/CONTROL_POLICY_INDEX.md`](../policies/CONTROL_POLICY_INDEX.md) | 2026-11-02 | Drill scenario template prepared; formal documented exercise pending. |
+| **33** | OS & dependency vulnerability patching | **P** | [`monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md`](../monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md) | 2026-11-02 | Kernel & OS packages updated; ClamAV daily updates; SLA document pending. |
+| **34** | Host EDR & Antivirus protection | **E** | [`monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md`](../monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md) | 2026-11-02 | Wazuh Agent (HIDS/EDR) and ClamAV daily scan timers active on both nodes. |
+| **35** | Admin portal MFA & network ACLs | **P** | [`identity-access/PRODUCTION_ADMIN_MFA_ENFORCEMENT_EVIDENCE.md`](../identity-access/PRODUCTION_ADMIN_MFA_ENFORCEMENT_EVIDENCE.md) | 2026-11-02 | Web portal MFA enforced in production; SSH uses keys; cloud console external. |
+| **36** | Privileged Access Management (PAM) | **P** | [`identity-access/PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md`](../identity-access/PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md) | 2026-11-02 | Operational sudo exception preserved; Teleport/Boundary PAM evaluation documented. |
+| **37** | Automated encrypted backup & recovery | **P** | [`backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md`](../backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md) | 2026-11-02 | Remote backups to Storage Box encrypted (`aes-256-cbc`); local repo1 unencrypted. |
+| **38** | Internal or independent VAPT | **E** | [`vapt/INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md`](../vapt/INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md) | 2026-11-02 | Internal technical assessment completed 31 Oct 2026; zero High/Critical gaps. |
+| **39** | Annual VAPT schedule & policy | **P** | [`vapt/ANNUAL_VAPT_POLICY_AND_SCHEDULE.md`](../vapt/ANNUAL_VAPT_POLICY_AND_SCHEDULE.md) | 2026-11-02 | Policy approved; next formal annual test scheduled for 31 October 2027. |
+| **40** | VAPT remediation tracking & closure | **E** | [`vapt/INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md`](../vapt/INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md) | 2026-11-02 | 5 findings verified closed in QA; 1 open policy (CSP); 1 external assurance. |
+| **41** | Carrier & sub-aggregator inventory | **E** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-02 | Interconnects documented: Vodafone (10 binds), Airtel (2), Mobishastra (2). |
+| **42** | Security review of downstream parties | **P** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-02 | Customer KYC and configuration review active; formal questionnaire pending. |
+| **43** | Mandatory subprocessor security clauses | **P** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-02 | Subprocessor list published; commercial agreement security clauses active. |
+| **44** | Alternate DC / failover plan | **G** | [`policies/BUSINESS_CONTINUITY_POLICY_SUMMARY.md`](../policies/BUSINESS_CONTINUITY_POLICY_SUMMARY.md) | 2026-11-02 | Primary in Hetzner Falkenstein; remote backup offsite; hot standby alternate DC absent. |
+| **45** | Documented BCP/DR testing | **P** | [`backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md`](../backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md) | 2026-11-02 | Database PITR restoration verified; full multi-server platform drill pending. |
+| **46** | RTO (<4h) and RPO (<15m) achieved | **P** | [`backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md`](../backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md) | 2026-11-02 | DB restore took ~3 min; WAL lag <1 min; targets defined and verified in lab scope. |
+| **47** | Corporate email authentication (SPF/DMARC) | **E** | [`governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md`](../governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md) | 2026-11-02 | Public DNS SPF and DMARC records verified active for `pingplusmedia.com`. |
+| **48** | Corporate email MFA enforced | **P** | [`governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md`](../governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md) | 2026-11-02 | Google Workspace 2-Step Verification enabled; organization report pending. |
+| **49** | Corporate MDM solution deployed | **G** | [`governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md`](../governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md) | 2026-11-02 | Corporate device policy established; centralized commercial MDM agent absent. |
+| **50** | Remote account wipe & session revocation | **P** | [`governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md`](../governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md) | 2026-11-02 | Google Workspace remote account wipe active; full device hardware wipe partial. |
