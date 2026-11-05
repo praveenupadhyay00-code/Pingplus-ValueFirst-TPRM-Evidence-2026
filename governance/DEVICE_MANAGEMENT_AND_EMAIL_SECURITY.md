@@ -37,4 +37,4 @@ Owner records state that a **ManageEngine Remote Lock** operation was performed 
 | 49 | **E** | Owner-evidenced ManageEngine managed Android profile | No universal fleet coverage claim |
 | 50 | **E** | Owner-evidenced remote lock and selective corporate data removal | No personal-device full wipe claim |
 
-**Authority:** [5 November owner-approved submission matrix](https://docs.google.com/spreadsheets/d/1_So-Qp9-_K5gDrytB2bsZcn-Z3qtmZSM-uXokVFmW-A/edit). This is the owner self-assessment scope, subject to ValueFirst/Tanla's independent review. Previous 2 November Google Workspace claims are superseded and should not be reused.
+**Authority:** 5 November owner-approved submission matrix (restricted owner-held workbook, not published here). This is the owner self-assessment scope, subject to ValueFirst/Tanla's independent review. Previous 2 November Google Workspace claims are superseded and should not be reused.
