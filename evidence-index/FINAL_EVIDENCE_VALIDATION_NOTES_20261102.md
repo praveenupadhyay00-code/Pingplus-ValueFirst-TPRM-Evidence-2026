@@ -1,5 +1,10 @@
 # Evidence validation notes — 2 November 2026
 
+> **Superseded for current grades (5 November 2026).** This is a dated 2 November validation note, not the live submission authority. For current owner-approved **34 E / 15 P / 1 G**, see [the master register](CONTROL_EVIDENCE_REGISTER.md) and [evidence scope/provenance addendum](CONTROL_EVIDENCE_SCOPE_20261105.md). Earlier Google Workspace, PAM, DR, technical-completion and checksum statements are historical snapshots only and must not override the revised scope; ValueFirst acceptance is still pending.
+
+---
+
+
 **Audience:** ValueFirst/Tanla security reviewers and Pingplus Media compliance owners.
 **Scope:** Internal operator evidence pack published on 2 November 2026, not an independent security audit or ValueFirst acceptance. 
 **Source:** Public evidence commit `54b955ec047eb0a00dabd5cb8f8b827097fba61d`; these notes qualify the evidence, not the service.
