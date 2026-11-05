@@ -9,7 +9,7 @@
 
 ## 1. Source-of-truth reconciliation
 
-The [owner's live submission workbook](https://docs.google.com/spreadsheets/d/1_So-Qp9-_K5gDrytB2bsZcn-Z3qtmZSM-uXokVFmW-A/edit) is the classification authority as of 5 November. The earlier public 2 November matrix (21 E / 27 P / 2 G) is a historical snapshot; it must not be presented as the current submission grade.
+The owner's live submission workbook (restricted owner-held workbook, not published here) is the classification authority as of 5 November. The earlier public 2 November matrix (21 E / 27 P / 2 G) is a historical snapshot; it must not be presented as the current submission grade.
 
 The fourteen grade changes versus that historical snapshot are:
 - P to E, on owner-accepted policy, paperwork or operational evidence: **6, 7, 13, 27, 28, 32, 33, 35, 42, 43, 44, 49, 50**.
