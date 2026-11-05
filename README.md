@@ -91,7 +91,7 @@ Read the [current register](evidence-index/CONTROL_EVIDENCE_REGISTER.md) and [5 
 
 ## 4. Integrity and distribution safety
 
-The repository contains a **historical** `checksums.sha256` manifest. It does not match every revised 5 November file and **must not be presented as a current pack-wide integrity receipt**. Cite the exact public Git commit and individual file paths. Regenerate and verify a new SHA-256 manifest only after a final approved public release freeze.
+The original `checksums.sha256` is a **historical** 2 November manifest and must not be used as a current-pack receipt. The updated artifact set is enumerated separately in `checksums-20261105.sha256` (SHA-256 of each current file except the manifest itself and the historical manifest); verify with `sha256sum -c checksums-20261105.sha256` after fetching the exact repository version. A checksum proves byte integrity, not operational truth or Git-history privacy.
 
 Earlier public Git history may still contain unredacted details. A current HEAD update does **not** purge historical blobs; see [PUBLICATION_SAFETY_NOTICE.md](PUBLICATION_SAFETY_NOTICE.md). New local-only operator receipts must not be represented as independently published or verified until the relevant commit is accessible.
 
