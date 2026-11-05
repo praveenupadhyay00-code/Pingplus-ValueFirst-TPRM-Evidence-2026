@@ -82,7 +82,7 @@ The repository is structured into modular compliance domains:
 - **Owner-evidenced (`E`):** **34** controls. Includes owner-accepted policies, governance records and technical evidence; this is **not** synonymous with live technical enforcement or external approval.
 - **Partial / Exception (`P`):** **15** controls. Includes safely isolated QA/design work and remaining deployment/verification exceptions. Control 36 (delegated PAM workflow) is **P**, not G.
 - **Contractual Gap (`G`):** **1** control: #30, the bilateral breach notification SLA (48h signed draft vs the questionnaire's 24h reference; ValueFirst countersignature pending). Control #2 remains **P** pending counterpart execution.
-- **Total:** **50**, aligned with the [live owner-approved submission workbook](https://docs.google.com/spreadsheets/d/1_So-Qp9-_K5gDrytB2bsZcn-Z3qtmZSM-uXokVFmW-A/edit).
+- **Total:** **50**, aligned with the live owner-approved submission workbook (restricted owner-held workbook, not published here).
 
 Read the [current register](evidence-index/CONTROL_EVIDENCE_REGISTER.md) and [5 November scope/provenance addendum](evidence-index/CONTROL_EVIDENCE_SCOPE_20261105.md) before relying on any older report. Historical documents remain available for audit trail but do not override the current classifications. The underlying approved policy PDFs have not been changed.
 
