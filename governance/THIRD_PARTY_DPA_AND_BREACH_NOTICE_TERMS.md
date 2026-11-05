@@ -1,31 +1,28 @@
-# Third-Party DPA, Carrier Chain & Breach Notification Terms
+# Third-Party Data Protection, Carrier Governance and Breach Notice
 
-**Control References:** ValueFirst Controls 2, 30, 41, 42, 43  
-**Review Date:** 2 November 2026  
-**Governing Authority:** Legal & Compliance Office, Pingplus Media  
-**Classification:** SANITIZED CONTRACTUAL GOVERNANCE SUMMARY  
-**Result Status:** **CONTROLS 41, 43 (PASS) / CONTROLS 2, 30, 42 (PARTIAL)**  
+**ValueFirst controls:** 2, 30, 41, 42, 43  
+**Owner assessment:** 5 November 2026  
+**Owner grades:** **2 P · 30 G · 41 E · 42 E · 43 E**  
+**Classification:** PUBLIC SANITIZED GOVERNANCE SUMMARY — restricted contracts and interconnect inventory withheld.
 
----
+## 1. Bilateral data-processing agreement (controls 2 and 30)
 
-## 1. Bilateral Data Processing Agreement (DPA) Status (Control 2, 30)
-- **Document Status:** Pingplus Media has executed the formal Data Processing Agreement and Security Schedule, and delivered the agreement for **bilateral countersignature by ValueFirst / Tanla**.
-- **Breach Notification SLA Clause:** The current drafted DPA specifies customer notification **within 48 hours** following confirmation of a security incident affecting customer data. 
-- *TPRM Transparency Note:* In adherence to anti-fabrication guidelines, Pingplus Media explicitly clarifies that the contractual notification clause currently specifies 48 hours rather than a 24-hour obligation, pending final bilateral execution.
+Pingplus Media has signed and sent its DPA for counterparty review. **ValueFirst/Tanla countersignature remains pending**, and the processing schedule and legal-entity wording require final bilateral review.
 
----
+The owner-signed draft provides a **48-hour** breach-notification period, while the ValueFirst control asks for a **24-hour** obligation. No 24-hour contract or counterparty acceptance is claimed. Control 2 remains partial and **control 30 remains the sole contractual gap** until the final executed terms resolve the discrepancy.
 
-## 2. Upstream Telecom Carrier & Aggregator Chain (Control 41)
-Pingplus Media maintains direct, contractually bound interconnects with accredited telecommunication operators and aggregators:
+## 2. Upstream carrier and aggregator oversight (control 41)
 
-| Upstream Partner | Connection Type | Active Binds | Interconnect Endpoint | Protocol |
-|---|---|:---:|---|---|
-| **Vodafone Idea Ltd** | Direct Telecom Carrier Gateway | 10 Binds | Dedicated Carrier Port 2777 | SMPP v3.4 over Private Network |
-| **Bharti Airtel Ltd** | Direct Telecom Carrier Gateway | 2 Binds | Dedicated Carrier Port 2778 | SMPP v3.4 over Private Network |
-| **Mobishastra Technologies** | Direct SMS Aggregator Gateway | 2 Binds | Dedicated Host Port 18849 | SMPP v3.4 over Private Network |
+The owner maintains a current carrier/sub-aggregator interconnection inventory and supporting contractual records in restricted custody. Their existence and governance documentation are accepted by the owner as evidence for control 41, subject to ValueFirst review. **No live carrier names, bind counts, dedicated gateway ports, routes, supplier credentials or peer-address allocations are published in this public repository.** An authorized reviewer can request a separately screened inventory through the private compliance channel.
 
----
+## 3. Downstream diligence and subprocessor contract clauses (controls 42 and 43)
 
-## 3. Subprocessor Security & Data Protection Clauses (Control 43)
-- **Subprocessor Register:** Publicly disclosed at `https://pingplusmedia.com/subprocessors/`, listing infrastructure hosts (Hetzner Online GmbH) and telecommunication partners.
-- **Mandatory Security Clauses:** All subprocessors and carriers operate under enterprise service agreements incorporating strict confidentiality, data protection, and operational security requirements.
+The owner-approved classification recognizes existing downstream onboarding, due-diligence, customer KYC and contractual security/data-protection paperwork as evidence. Individual counterparty reviews and signed agreements remain confidential and are not presented as public attachments.
+
+The published general subprocessor-policy index is available at https://pingplusmedia.com/subprocessors/. This link is a public policy summary, not a repository of private agreements.
+
+## 4. Distribution boundary
+
+The owner-approved grades represent acceptance of policy and commercial documentation for submission; they do not establish external ValueFirst acceptance or a live audit of every supplier. Previous versions of this public Git file may contain over-specific topology and counterparty detail in **historical commits**. Editing current HEAD does not erase Git history; refer to [publication safety notice](../PUBLICATION_SAFETY_NOTICE.md).
+
+Never include SMPP bind identifiers or credentials, private partner addresses, routing rules, pricing, traffic volumes, or the executed contracts in a public appendix. No changes to production carrier bindings, message routing or customer traffic were made.
