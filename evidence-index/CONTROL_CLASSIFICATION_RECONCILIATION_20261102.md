@@ -1,5 +1,10 @@
 # ValueFirst TPRM: Final Post-Operator Classification Reconciliation — 2 November 2026
 
+> **Historical assessment only — superseded 5 November 2026.** This document records the 2 November `21 E / 27 P / 2 G` assessment and must not be used as the current ValueFirst submission disposition. The [owner-approved current register](CONTROL_EVIDENCE_REGISTER.md) and [5 November scope addendum](CONTROL_EVIDENCE_SCOPE_20261105.md) govern the current `34 E / 15 P / 1 G` classification. Old platform references (including Google Workspace) and scope claims are retained solely for historical traceability, not current operational assertions. ValueFirst approval remains pending.
+
+---
+
+
 **Document ID:** `PP-RECON-50C-FINAL-20261102`  
 **Execution Date:** 2 November 2026  
 **Governing Standard:** ISO/IEC 27001:2022 ISMS  
