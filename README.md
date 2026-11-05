@@ -1,26 +1,27 @@
 # Pingplus Media — ValueFirst TPRM Public Evidence Repository (2026)
 
 **Repository Reference:** `praveenupadhyay00-code/Pingplus-ValueFirst-TPRM-Evidence-2026`  
-**Execution & Packaging Date:** 2 November 2026  
-**Auditor / Client:** ValueFirst Digital Media Pvt. Ltd. / Tanla Platforms Ltd.  
+**Initial packaging:** 2 November 2026  
+**Owner classification reconciliation:** 5 November 2026  
+**Intended external reviewer:** ValueFirst Digital Media Pvt. Ltd. / Tanla Platforms Ltd. (acceptance pending)  
 **System Evaluated:** Ping Pulse Messaging Platform  
-**Target Hosts:** `pingpulse-app` (`[APP_HOST_ADDRESS_REDACTED]`) & `pingpulse-db` (`[DB_HOST_ADDRESS_REDACTED]`)  
+**System scope:** Application, database, messaging gateways, security controls and documented recovery arrangements (no private host inventory published)  
 **Certification Standard:** ISO/IEC 27001:2022 (Certificate `305026090945IS`, QRO Certification LLP)  
-**Classification:** SANITIZED PUBLIC COMPLIANCE EVIDENCE  
+**Classification:** PUBLIC, SCOPE-QUALIFIED SELF-ASSESSMENT — see publication safety notice for historical Git risks  
 
 ---
 
 ## 1. Overview & Purpose
 
-This repository serves as the official sanitized public evidence repository for Pingplus Media's **Third-Party Risk Management (TPRM) Security Assessment** conducted for ValueFirst / Tanla. 
+This repository is Pingplus Media's **owner-controlled TPRM submission evidence index** prepared for review by ValueFirst / Tanla. It is not an audit performed or approved by those organizations. 
 
-It organizes and presents verified technical test outputs, configuration extracts, policy links, and governance documentation corresponding to all **50 controls** of the ValueFirst Aggregator Security Checklist.
+It indexes documented policies, owner attestations, scoped QA receipts and selected production technical records for the checklist's **50 controls**. Distinguish operator-reported work from independently verified artifacts and from live enforcement.
 
 ### Anti-Fabrication & Strict Transparency Policy
 In strict compliance with TPRM integrity rules:
 - **Zero Inventions:** No external contracts, signed third-party audit reports, or SOC agreements are claimed unless verified artifacts exist.
 - **Explicit Scope Boundaries:** Distinctions between production enforcement, isolated QA validation, owner attestation, and operational exceptions are explicitly stated.
-- **Zero Secrets / Zero PII:** Proprietary source code, customer message payloads, subscriber telephone numbers, cryptographic private keys, passwords, and non-public network topologies are omitted or redacted.
+- **Public safety:** Do not publish credentials, customer message data, private network details or carrier contracts. Current edits do not clean earlier public Git history; see [publication safety notice](PUBLICATION_SAFETY_NOTICE.md).
 - **Restricted Vault Reference:** Original signed documents (e.g. GST registration certificate, full ISO 27001 certificate PDF, commercial carrier agreements) are maintained in an access-controlled private vault and made available to authorized auditors upon request.
 
 ---
@@ -66,33 +67,33 @@ The repository is structured into modular compliance domains:
 │   ├── OWNER_OPERATIONAL_RECORDS_REGISTER.md          # Attested training, access review, log review, drill & NOC rota
 │   ├── RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md      # Technical candidate risk register & CEO escalation framework
 │   ├── THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md     # Bilateral DPA status, 48h breach clause & carrier interconnects
-│   └── DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md        # Live DNS SPF, 2048-bit RSA DKIM, DMARC & Google Workspace MDM
+│   └── DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md        # cPanel email, monitored DMARC, ManageEngine Cloud MDM
 └── evidence-index/
-    ├── CONTROL_EVIDENCE_REGISTER.md                   # Authoritative master 50-control compliance matrix
-    ├── CONTROL_CLASSIFICATION_RECONCILIATION_20261102.md # Final post-operator 21E / 27P / 2G reconciliation audit
-    └── VALUEFIRST_TPRM_SUBMISSION_RECONCILIATION_SYNC.csv # 1-to-1 sync matrix for submission spreadsheet
+    ├── CONTROL_EVIDENCE_REGISTER.md                   # Owner-approved 5 Nov 34E / 15P / 1G matrix
+    ├── CONTROL_CLASSIFICATION_RECONCILIATION_20261102.md # Historical 2 Nov 21E / 27P / 2G assessment
+    ├── VALUEFIRST_TPRM_SUBMISSION_RECONCILIATION_SYNC.csv # 5 Nov 50-row owner-grade sync
+    └── CONTROL_EVIDENCE_SCOPE_20261105.md            # QA vs production scope and evidence provenance
 ```
 
 ---
 
-## 3. High-Level Control Status Summary (reconciled 2 November 2026)
+## 3. Current owner-approved control status (5 November 2026)
 
-- **Evidenced (`E`):** 21 controls (enforced in live production, backed by technical command output or active ISO 27001 certification)
-- **Partial / Exception / QA-Qualified (`P`):** 27 controls (scoped QA qualified, operating under documented operational exception, or owner-attested)
-- **Genuine Gap (`G`):** 2 controls (Control 30 bilateral DPA 24h countersignature term; Control 36 formal approval-based PAM workflow)
-- **Total:** 50 controls fully mapped and accounted for.
+- **Owner-evidenced (`E`):** **34** controls. Includes owner-accepted policies, governance records and technical evidence; this is **not** synonymous with live technical enforcement or external approval.
+- **Partial / Exception (`P`):** **15** controls. Includes safely isolated QA/design work and remaining deployment/verification exceptions. Control 36 (delegated PAM workflow) is **P**, not G.
+- **Contractual Gap (`G`):** **1** control: #30, the bilateral breach notification SLA (48h signed draft vs the questionnaire's 24h reference; ValueFirst countersignature pending). Control #2 remains **P** pending counterpart execution.
+- **Total:** **50**, aligned with the [live owner-approved submission workbook](https://docs.google.com/spreadsheets/d/1_So-Qp9-_K5gDrytB2bsZcn-Z3qtmZSM-uXokVFmW-A/edit).
+
+Read the [current register](evidence-index/CONTROL_EVIDENCE_REGISTER.md) and [5 November scope/provenance addendum](evidence-index/CONTROL_EVIDENCE_SCOPE_20261105.md) before relying on any older report. Historical documents remain available for audit trail but do not override the current classifications. The underlying approved policy PDFs have not been changed.
 
 
 ---
 
-## 4. Verification Checksums
+## 4. Integrity and distribution safety
 
-To verify document integrity and ensure authentic evidence provenance, SHA-256 checksums are generated for all published technical artifacts:
+The repository contains a **historical** `checksums.sha256` manifest. It does not match every revised 5 November file and **must not be presented as a current pack-wide integrity receipt**. Cite the exact public Git commit and individual file paths. Regenerate and verify a new SHA-256 manifest only after a final approved public release freeze.
 
-```bash
-# Verify checksums across repository files:
-find . -type f -name "*.md" -not -name "README.md" -exec sha256sum {} +
-```
+Earlier public Git history may still contain unredacted details. A current HEAD update does **not** purge historical blobs; see [PUBLICATION_SAFETY_NOTICE.md](PUBLICATION_SAFETY_NOTICE.md). New local-only operator receipts must not be represented as independently published or verified until the relevant commit is accessible.
 
 ---
 
