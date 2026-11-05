@@ -1,82 +1,40 @@
-# Corporate Email Authentication & Endpoint Device Security
+# Corporate Email Authentication and Managed Device Evidence
 
-**Control References:** ValueFirst Controls 47, 48, 49, 50  
-**Verification Date:** 2 November 2026  
-**Target Domain:** `pingplusmedia.com`  
-**Assessor:** Pingplus Media Authorized Security & Compliance Operator  
-**Classification:** SANITIZED TECHNICAL EVIDENCE  
-**Result Status:** **CONTROLS 47–50: TECHNICAL DNS/EVIDENCE VERIFIED; OWNER CONSOLE RECEIPTS DOCUMENTED**  
+**Controls:** ValueFirst 47–50  
+**Owner assessment cutoff:** 5 November 2026  
+**Classification:** Sanitized owner-controlled technical and policy evidence  
+**Current owner grades:** **47 P · 48 P · 49 E · 50 E**  
+**Scope warning:** Owner-submitted records and operator-reported checks are not a current independent DNS/MDM audit or ValueFirst sign-off.
 
----
+## 47. SPF, DKIM and DMARC — Partial (P)
 
-## 1. Public DNS Email Authentication Verification (Control 47)
+Owner and operator records report SPF alignment and a 2048-bit RSA DKIM key for the corporate domain. Previously recorded DMARC policy is `v=DMARC1; p=none;`, meaning **monitoring, not rejection/quarantine enforcement**. A proposed staged quarantine/reject rollout is a **plan only**; no live DNS changes were authorized by this TPRM review.
 
-Live public DNS records for `pingplusmedia.com` were verified via DNS queries:
+A current DNS query, sender inventory, aggregate report analysis, and separately approved rollback process are required before increasing DMARC enforcement. DNS evidence from 2 November is a dated record, not a claim of continuous live verification on 5 November.
 
-### A. Sender Policy Framework (SPF)
-Command: `dig +short TXT pingplusmedia.com`
-```text
-"v=spf1 a mx include:spf-c.mailbaby.net ~all"
-```
-- **SPF Status:** **Active & Verified**. Designates authorized outbound mail servers (`a`, `mx`, and outbound relay `spf-c.mailbaby.net`).
+## 48. Corporate email MFA and transport — Partial (P)
 
-### B. DomainKeys Identified Mail (DKIM)
-Command: `dig +short TXT default._domainkey.pingplusmedia.com`
-```text
-"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsSVEL8iSRRcINZtkmeInwshT0dNShtw9uW5Qdml5FrGNSckx44RDkLPEA1wzm8DzpnJNwhA2vVU0Dg0dL+RDGEs9VMERHh8Mhj+mMhN4CoMaIyQXhF6JMs64wLmcpKCdaxm3Sf3AbwtYTtExp3Haw7Zneecg2n76HaHiNCEG313RWFlNz6R5ELYnWQ2D79ZyG" "a2AaypZkg7jBasJESwU84jYTfPMlfuSChNZYW0kvloyjFzZlkTxQHhOshahZ4k9itCqcv5PCskaWo3fZD8KJCq8Vr/w7oHNQxsvNEeCqkRBGtiGYMpBUJuRljm4v2Q8FqpcF3OaqRz2Ar+gsuv8IQIDAQAB;"
-```
-- **DKIM Status:** **Active & Verified**. Valid 2048-bit RSA public key published under selector `default`. Digital signatures on outbound corporate email are verified against this public key.
+- **Actual corporate mailbox platform:** **cPanel/WHM**, with Dovecot/IMAP and SMTP. Do not describe these mailboxes as Google Workspace Enterprise.
+- **Webmail:** TOTP 2FA reported as enabled for Webmail access.
+- **Outlook desktop:** Standard IMAP/SMTP TLS clients still use mailbox passwords. **Webmail TOTP does not extend to Outlook IMAP password authentication**, and direct IMAP MFA must not be claimed.
+- **Transport safeguards:** Operator report describes modern TLS for mail transport and cPHulk brute-force protection. This does not replace per-protocol MFA.
+- **Continuity:** No mailbox hosting migration, password rotation, Outlook disruption or DNS/MX cutover was undertaken.
 
-### C. Domain-based Message Authentication, Reporting & Conformance (DMARC)
-Command: `dig +short TXT _dmarc.pingplusmedia.com`
-```text
-"v=DMARC1; p=none;"
-```
-- **DMARC Status:** **Active in Monitoring Mode**. Standard deployment policy (`p=none`) collecting aggregate feedback without blocking valid transactional relays prior to full quarantine cutover.
+## 49. Mobile Device Management — Owner-evidenced (E)
 
----
+The current owner-approved evidence identifies **ManageEngine Cloud MDM**, not Google Workspace Endpoint Management. It records one managed, compliant Android work-profile enrollment with Play Protect. Classification E represents owner acceptance of the documented deployed MDM capability. It does **not** attest universal management of every company or BYOD device. Restricted device inventory and enrollment screenshots remain owner-controlled.
 
-## 2. Corporate Mailbox Security & MFA Enforcement (Control 48)
+## 50. Remote management, lock and work-data removal — Owner-evidenced (E)
 
-- **Platform:** Google Workspace Enterprise.
-- **2-Step Verification (2SV):** Organizational 2SV enforcement policy is enabled for all `@pingplusmedia.com` administrative and user mailboxes.
-- **Authentication Safeguards:** Enforces FIDO2 / WebAuthn hardware security keys, Google Authenticator TOTP, or Google Prompts.
-- **Owner Evidence Action:** Formal compliance requires an owner-authenticated screenshot from Google Workspace Admin Console (`admin.google.com` -> *Security* -> *Authentication* -> *2-Step Verification*) demonstrating "Enforcement: ON".
+Owner records state that a **ManageEngine Remote Lock** operation was performed and audited. Selective work-profile removal and corporate account/session revocation are available. No destructive wipe of a personal device was performed or is claimed. The restricted management-console receipt is available for authorized review, not public publication.
 
----
+## Boundary and submission position
 
-## 3. Endpoint Device Management Coverage (Control 49)
+| Control | Owner grade | Evidence scope | Open limitation |
+|---|:---:|---|---|
+| 47 | **P** | SPF/DKIM records and DMARC staged policy design | DMARC remains `p=none`; no production enforcement |
+| 48 | **P** | cPanel Webmail MFA and mail TLS safeguards | Outlook IMAP password authentication does not enforce MFA |
+| 49 | **E** | Owner-evidenced ManageEngine managed Android profile | No universal fleet coverage claim |
+| 50 | **E** | Owner-evidenced remote lock and selective corporate data removal | No personal-device full wipe claim |
 
-- **Device Management Provider:** Google Workspace Endpoint Management.
-- **Enforcement Scope:**
-  - Manages enrolled mobile devices (Android / iOS) and workstations accessing corporate Google Workspace services.
-  - Enforces mandatory device screen lock / PIN / password complexity.
-  - Enforces device storage encryption.
-  - Prevents data leakage through corporate application sandboxing.
-- **Owner Evidence Action:** Formal fleet coverage verification requires an owner-authenticated screenshot from Google Workspace Admin Console (`admin.google.com` -> *Devices* -> *Mobile & Endpoints*) displaying the active managed fleet inventory.
-
----
-
-## 4. Remote Device & Account Wipe Capabilities (Control 50)
-
-Google Workspace Endpoint Management provides granular remote wipe capabilities:
-
-1. **Account Wipe (Selective Wipe - Evidenced & Active):**
-   - Remotely purges all corporate email, documents, profile credentials, and cached data from any mobile or desktop endpoint immediately upon administrator action.
-   - Personal user data on BYOD devices is untouched.
-   - Active user sessions are immediately revoked globally.
-
-2. **Device Wipe (Full Hardware Reset - Supported on Enterprise-Enrolled Endpoints):**
-   - Initiates a factory reset of the physical hardware for company-owned, enterprise-managed mobile devices (Android Enterprise / Apple DEP/MDM profile).
-   - BYOD desktop environments rely on Account Wipe, browser session revocation, and OAuth token revocation.
-
----
-
-## 5. Controls 47–50 Disposition Summary
-
-| Control | Description | Technical State | Required Owner Screenshot Action |
-|:---:|---|:---:|---|
-| **47** | Email Authentication (SPF/DKIM/DMARC) | **Evidenced (`E`)** | None; validated via live DNS queries. |
-| **48** | Mailbox 2SV / MFA Enforcement | **Partial (`P`)** | Admin console screenshot of 2SV enforcement policy. |
-| **49** | Endpoint Device Management Coverage | **Partial (`P`)** | Admin console screenshot of managed device inventory. |
-| **50** | Remote Wipe & Session Revocation | **Partial (`P`)** | Admin console screenshot showing Account/Device wipe action menu. |
+**Authority:** [5 November owner-approved submission matrix](https://docs.google.com/spreadsheets/d/1_So-Qp9-_K5gDrytB2bsZcn-Z3qtmZSM-uXokVFmW-A/edit). This is the owner self-assessment scope, subject to ValueFirst/Tanla's independent review. Previous 2 November Google Workspace claims are superseded and should not be reused.
