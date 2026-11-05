@@ -19,7 +19,7 @@
 - **External contractual gap (G):** 1 control
 - **Total:** 50; internal owner dispositions, not external acceptance.
 
-**Authoritative grading:** [Owner submission master](https://docs.google.com/spreadsheets/d/1_So-Qp9-_K5gDrytB2bsZcn-Z3qtmZSM-uXokVFmW-A/edit). E may reflect owner-accepted documentary evidence; it never implies full live deployment. The 2 November reconciliation is historical. See `CONTROL_EVIDENCE_SCOPE_20261105.md` for later QA scope.
+**Authoritative grading:** Owner submission master (restricted owner-held workbook, not published here). E may reflect owner-accepted documentary evidence; it never implies full live deployment. The 2 November reconciliation is historical. See `CONTROL_EVIDENCE_SCOPE_20261105.md` for later QA scope.
 
 ---
 
