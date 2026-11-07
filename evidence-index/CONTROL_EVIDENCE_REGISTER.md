@@ -1,7 +1,7 @@
 # ValueFirst 50-Control Comprehensive Evidence Register
 
-**Document ID:** `PP-REG-50C-20261105`  
-**Owner assessment cutoff:** 5 November 2026  
+**Document ID:** `PP-REG-50C-20261107`  
+**Owner assessment cutoff:** 7 November 2026  
 **Governing Standard:** ISO/IEC 27001:2022 Certified ISMS  
 **Assessor:** Pingplus Media Authorized Security & Compliance Operator  
 **Classification:** SANITIZED MASTER EVIDENCE MATRIX  
@@ -13,13 +13,13 @@
 - **`P` (Partial / exception):** Remaining technical qualification, compatibility exception, external validation, or separately authorized production change.
 - **`G` (External gap):** Unresolved contractual or external requirement not satisfied by current signed records.
 
-### Owner-approved tally (5 November 2026)
-- **Owner-evidenced (E):** 34 controls
-- **Partial / exception / QA-qualified (P):** 15 controls
+### Owner-approved tally (7 November 2026)
+- **Owner-evidenced (E):** 36 controls
+- **Partial / exception / QA-qualified (P):** 13 controls
 - **External contractual gap (G):** 1 control
 - **Total:** 50; internal owner dispositions, not external acceptance.
 
-**Authoritative grading:** Owner submission master (restricted owner-held workbook, not published here). E may reflect owner-accepted documentary evidence; it never implies full live deployment. The 2 November reconciliation is historical. See `CONTROL_EVIDENCE_SCOPE_20261105.md` for later QA scope.
+**Authoritative grading:** Owner submission master (restricted owner-held workbook, not published here). E reflects owner-accepted documentary and technical evidence; it distinguishes isolated recovery from live multi-server failover. See `CONTROL_EVIDENCE_SCOPE_20261105.md` for later QA scope.
 
 ---
 
@@ -31,7 +31,7 @@
 | **2** | Signed Tanla/ValueFirst DPA | **P** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-05 | Pingplus Media signed and sent the bilateral DPA; ValueFirst/Tanla countersignature remains pending. ValueFirst review pending. |
 | **3** | Approved ISMS policy | **E** | [`policies/INFORMATION_SECURITY_POLICY_SUMMARY.md`](../policies/INFORMATION_SECURITY_POLICY_SUMMARY.md) | 2026-11-05 | Owner accepted: Approved and published ISMS policy is in effect from 11 April 2026 across 36 policy domains. ValueFirst review pending. |
 | **4** | ISO/IEC 27001:2022 Certification | **E** | [`governance/ISO_27001_CERTIFICATE_VERIFICATION.md`](../governance/ISO_27001_CERTIFICATE_VERIFICATION.md) | 2026-11-05 | Owner accepted: QRO ISO/IEC 27001:2022 certificate 305026090945IS is presented as active through 8 September 2029. ValueFirst review pending. |
-| **5** | Employee ISMS awareness training | **P** | [`governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md`](../governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md) | 2026-11-05 | 43-module awareness/training library active; individual training records remain confidential in HR custody. ValueFirst review pending. |
+| **5** | Employee ISMS awareness training | **E** | [`governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md`](../governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md) | 2026-11-07 | Owner accepted: 43-module awareness/training curriculum verified active since 11 Apr 2026; owner operational attestation and HR custody records confirmed. ValueFirst review pending. |
 | **6** | Security & privacy risk register | **E** | [`governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md`](../governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md) | 2026-11-05 | Owner accepted: Current information security risk register and risk-assessment policy maintained internally; approved paperwork is sufficient for owner-classified evidence. ValueFirst review pending. |
 | **7** | Risk treatment periodic review | **E** | [`governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md`](../governance/RISK_MANAGEMENT_AND_ESCALATION_SUMMARY.md) | 2026-11-05 | Owner accepted: Risk treatment and quarterly management-review process documented through approved risk policy and governance paperwork; detailed minutes remain confidential. ValueFirst review pending. |
 | **8** | Management escalation of critical risks | **E** | [`governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md`](../governance/OWNER_OPERATIONAL_RECORDS_REGISTER.md) | 2026-11-05 | Owner accepted: Critical/high risk escalation routes to Founder/CEO as approval and risk-acceptance authority. ValueFirst review pending. |
@@ -62,7 +62,7 @@
 | **33** | OS & dependency vulnerability patching | **E** | [`monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md`](../monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md) | 2026-11-05 | Owner accepted: Patching process, Ubuntu LTS security updates, unattended-upgrades and AV updates documented in the approved technical report and vulnerability-management policy. ValueFirst review pending. |
 | **34** | Host EDR & Antivirus protection | **E** | [`monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md`](../monitoring-soc/WAZUH_SIEM_AND_AGENT_VERIFICATION.md) | 2026-11-05 | Owner accepted: Wazuh HIDS/EDR and ClamAV host protection are documented in the technical PDF. ValueFirst review pending. |
 | **35** | Admin portal MFA & network ACLs | **E** | [`identity-access/PRODUCTION_ADMIN_MFA_ENFORCEMENT_EVIDENCE.md`](../identity-access/PRODUCTION_ADMIN_MFA_ENFORCEMENT_EVIDENCE.md) | 2026-11-05 | Owner accepted: Administrator Keycloak MFA and Hetzner console 2FA evidenced; key-only SSH and approved access-control procedures remain. Preserve owner SSH/sudo. ValueFirst review pending. |
-| **36** | Privileged Access Management (PAM) | **P** | [`identity-access/PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md`](../identity-access/PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md) | 2026-11-05 | Owner emergency access retained; delegated-only approval workflow tested in QA, not demonstrated as a deployed production PAM control. ValueFirst review pending. |
+| **36** | Privileged Access Management (PAM) | **P** | [`identity-access/PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md`](../identity-access/PRIVILEGED_ACCESS_MANAGEMENT_EVALUATION.md) | 2026-11-07 | Delegated approval workflow fixed in QA with user/tenant/action/target/payload binding, fail-closed enforcement, unpredictable ticket IDs, and audit records; live host PAM preserves owner direct SSH/sudo access. ValueFirst review pending. |
 | **37** | Automated encrypted backup & recovery | **P** | [`backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md`](../backup-and-dr/PGBACKREST_ENCRYPTED_BACKUP_STATUS.md) | 2026-11-05 | Encrypted offsite backups documented; local backup encryption and production recovery cutover remain gated. ValueFirst review pending. |
 | **38** | Internal or independent VAPT | **E** | [`vapt/INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md`](../vapt/INTERNAL_VAPT_SUMMARY_AND_FINDINGS_LEDGER.md) | 2026-11-05 | Owner accepted: Internal technical VAPT dated 31 October 2026; five findings closed, no reported critical/high within assessed scope. ValueFirst review pending. |
 | **39** | Annual VAPT schedule & policy | **E** | [`vapt/ANNUAL_VAPT_POLICY_AND_SCHEDULE.md`](../vapt/ANNUAL_VAPT_POLICY_AND_SCHEDULE.md) | 2026-11-05 | Owner accepted: Internal VAPT cycle reported; next annual assessment planned 31 October 2027. ValueFirst review pending. |
@@ -71,7 +71,7 @@
 | **42** | Security review of downstream parties | **E** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-05 | Owner accepted: Downstream due-diligence policy and customer KYC/network onboarding paperwork accepted by owner as sufficient; confidential counterparty assessments retained internally. ValueFirst review pending. |
 | **43** | Mandatory subprocessor security clauses | **E** | [`governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md`](../governance/THIRD_PARTY_DPA_AND_BREACH_NOTICE_TERMS.md) | 2026-11-05 | Owner accepted: Subprocessor public register and standard data-security/contractual clause paperwork accepted by owner as sufficient; contracts remain confidential. ValueFirst review pending. |
 | **44** | Alternate DC / failover plan | **E** | [`policies/BUSINESS_CONTINUITY_POLICY_SUMMARY.md`](../policies/BUSINESS_CONTINUITY_POLICY_SUMMARY.md) | 2026-11-05 | Owner accepted: Owner-attested alternate data center and published BCP/DR plan; automated live failover and Helsinki full restore are not claimed. ValueFirst review pending. |
-| **45** | Documented BCP/DR testing | **P** | [`backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md`](../backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md) | 2026-11-05 | BCP/DR policy and isolated recovery exercises documented; no live provider cutover. ValueFirst review pending. |
+| **45** | Documented BCP/DR testing | **E** | [`backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md`](../backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md) | 2026-11-07 | Owner accepted: Documented BCP/DR policy and actual isolated recovery exercises verified (~3.3m restore duration); explicitly distinguished from live multi-server failover. ValueFirst review pending. |
 | **46** | RTO (<4h) and RPO (<15m) achieved | **P** | [`backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md`](../backup-and-dr/ISOLATED_RECOVERY_REHEARSAL_AND_RTO_RPO.md) | 2026-11-05 | Isolated database/application recovery measured; full SMPP session, queue, DLR and secondary-site service recovery not proven. ValueFirst review pending. |
 | **47** | Corporate email authentication (SPF/DMARC) | **P** | [`governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md`](../governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md) | 2026-11-05 | SPF and DKIM alignment reported; DMARC remains p=none monitoring mode pending separately authorized enforcement. ValueFirst review pending. |
 | **48** | Corporate email MFA enforced | **P** | [`governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md`](../governance/DEVICE_MANAGEMENT_AND_EMAIL_SECURITY.md) | 2026-11-05 | Corporate mail remains on cPanel. Webmail TOTP and encrypted IMAP/SMTP documented; Outlook IMAP password authentication has no MFA. ValueFirst review pending. |
